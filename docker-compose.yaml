@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  trading-bar:
+    build: .
+    container_name: trading-bar-display
+    ports:
+      - "8501:8501"
+    environment:
+      - INTERVAL_MIN=10
+      - N_POINTS=31
+    restart: unless-stopped
